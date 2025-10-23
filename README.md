@@ -14,4 +14,3 @@ Esta pasta `docs` é onde guardamos toda a documentação do projeto e também o
 3. **Automação com GitHub Actions**
    - Quando damos um push em qualquer arquivo `.md` na pasta `docs`
    - O GitHub Actions pega esse arquivo e usa uma imagem Docker com Pandoc para converter em PDF
-   - E publica automaticamente no GitHub Pages

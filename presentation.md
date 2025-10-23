@@ -6,4 +6,4 @@
 ## Por que usar GitHub Actions?
 - Automatização
 - Reprodutibilidade
-- Facilidade de uso..?
+- Facilidade de uso..!
