@@ -3,7 +3,9 @@ name: Gerar Slides PDF
 on:
   push:
     paths:
-      - "docs/*.md"
+      - "presentation.md"
+      - "*.md"
+      - "**/*.md"
 
 jobs:
   build-slides:
