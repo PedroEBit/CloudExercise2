@@ -10,6 +10,9 @@ on:
 jobs:
   build-slides:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
     steps:
       - uses: actions/checkout@v4
 
@@ -27,8 +30,29 @@ jobs:
             pandoc/latex \
             presentation.md -o slides.pdf --slide-level=2
 
-      - name: Publicar Artefato
-        uses: actions/upload-artifact@v4
+      - name: Criar página HTML
+        run: |
+          echo '<!DOCTYPE html>
+          <html>
+            <head>
+              <title>Slides da Apresentação</title>
+              <meta charset="UTF-8">
+            </head>
+            <body>
+              <h1>Slides da Apresentação</h1>
+              <p>
+                <a href="slides.pdf" class="button">
+                  Baixar PDF dos Slides
+                </a>
+              </p>
+            </body>
+          </html>' > index.html
+
+      - name: Publicar no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: slides-pdf
-          path: slides.pdf
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: slides-output
+          force_orphan: true
+          exclude_assets: '.github'
