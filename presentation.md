@@ -7,4 +7,4 @@
 - Automatização
 - Reprodutibilidade
 - Facilidade de uso!!
-- Publicação automática de artefatos!
+- Publicação automática de artefatos!?
