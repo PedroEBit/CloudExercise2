@@ -25,7 +25,7 @@ jobs:
           docker run --rm \
             --volume "$(pwd):/data" \
             pandoc/latex \
-            docs/presentation.md -o slides.pdf --slide-level=2
+            presentation.md -o slides.pdf --slide-level=2
 
       - name: Publicar Artefato
         uses: actions/upload-artifact@v4
