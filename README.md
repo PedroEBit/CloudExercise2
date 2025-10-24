@@ -1,16 +1,7 @@
-## O que estamos fazendo aqui?
+Exercício 2 - 
 
-Esta pasta `docs` é onde guardamos toda a documentação do projeto e também onde configuramos a geração automática de slides em PDF.
+O que fizemos de diferente:
+Alteramos o modo de instalação da biblioteca pandoc para uma maneira mais rápida e robusta: via docker images. Assim a aplicação não instala
+na sua máquina tudo o que é necessário para o projeto, sendo mais rápido e menos propenso a erros de versionamento
 
-### Como funciona o fluxo?
-
-1. **Escrevendo conteúdo**
-   - Escrevemos nossa apresentação em Markdown no arquivo `presentation.md`
-
-2. **Configuração do Pandoc**
-   - O arquivo `pandoc.yaml` diz como queremos que nosso PDF fique
-   - Definimos coisas como estilo, tema, fonte, etc
-
-3. **Automação com GitHub Actions**
-   - Quando damos um push em qualquer arquivo `.md` na pasta `docs`
-   - O GitHub Actions pega esse arquivo e usa uma imagem Docker com Pandoc para converter em PDF
+O GitHub Actions pega o arquivo Markdown convertido em html e usa essa imagem Docker com Pandoc para converter em PDF, e então configuramos o repositório para mandar essas mudanças para a branch files-output.
